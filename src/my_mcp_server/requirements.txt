@@ -1,0 +1,4 @@
+fastmcp>=2.13
+entsoe-py>=0.6.0
+pandas>=2.0.0
+rich>=14.0

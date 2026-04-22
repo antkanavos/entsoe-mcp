@@ -1,0 +1,10 @@
+version: 1
+runtime: python
+entry: src/my_mcp_server/server.py
+
+build:
+  install: pip install -r requirements.txt
+
+startCommand:
+  type: http
+  command: python src/my_mcp_server/server.py
