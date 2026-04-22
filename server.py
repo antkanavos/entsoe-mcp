@@ -398,4 +398,7 @@ def compare_prices(country_codes: str, date: str) -> str:
         return f"Error comparing prices: {str(e)}"
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http")
+    import uvicorn
+    port = int(os.environ.get("PORT", 8080))
+    app = mcp.streamable_http_app()
+    uvicorn.run(app, host="0.0.0.0", port=port, proxy_headers=True, forwarded_allow_ips="*")
